@@ -1,12 +1,16 @@
-import Header from "./assets/component/Header"
-import Footer from "./assets/component/Footer"
-import Ebook from "./screens/Ebook"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Ebook from '../src/screens/Ebook';
+import Finish from '../src/screens/Finish';
+import About from './screens/About';
 export default function App() {
   return (
-    <h1 className="text-3xl">
-      <Header></Header>
-      <Ebook></Ebook>
-      <Footer></Footer>
-    </h1>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Ebook />} />
+        <Route path="/finish" element={<Finish />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
 }

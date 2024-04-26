@@ -5,7 +5,7 @@ const Header = () => {
         <header>
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <a href="#" className="flex items-center">
+                    <a href="/" className="flex items-center">
                         <img src={logo} className="mr-3 h-10 sm:h-12" alt="Logo" />
                         <span className="self-center text-xl text-bluevio font-semibold whitespace-nowrap">CassoBook</span>
                     </a>
@@ -21,7 +21,10 @@ const Header = () => {
                     <div className="hidden justify-between items-center font-bold w-full lg:flex lg:w-auto lg:order-1" >
                         <div className="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0">
                             <div>
-                                <a href="#" className="block text-sm py-2 pr-4 pl-3 text-gray-400 lg:bg-transparent lg:text-gray-400 lg:p-0 hover:text-gray-600">EBOOK</a>
+                                <a href="/" className="block text-sm py-2 pr-4 pl-3 text-gray-400 lg:bg-transparent lg:text-gray-400 lg:p-0 hover:text-gray-600">EBOOK</a>
+                            </div>
+                            <div>
+                                <a href="/about" className="block text-sm py-2 pr-4 pl-3 text-gray-400 lg:bg-transparent lg:text-gray-400 lg:p-0 hover:text-gray-600">VỀ CHÚNG TÔI</a>
                             </div>
                             <div>
                                 <a href="https://payos.vn/tin-tuc/" className="block text-sm py-2 pr-4 pl-3 text-gray-400  lg:text-gray-400 lg:p-0 hover:text-gray-600">TIN TỨC</a>
@@ -30,9 +33,7 @@ const Header = () => {
                             <div>
                                 <a href="https://payos.vn/docs/" className="block text-sm py-2 pr-4 pl-3 text-gray-400 lg:bg-transparent lg:text-gray-400 lg:p-0 hover:text-gray-600">TÀI LIỆU TÍCH HỢP</a>
                             </div>
-                            <div>
-                                <a href="#" className="block text-sm py-2 pr-4 pl-3 text-gray-400 lg:bg-transparent lg:text-gray-400 lg:p-0 hover:text-gray-600">VỀ CHÚNG TÔI</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

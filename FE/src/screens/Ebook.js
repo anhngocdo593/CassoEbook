@@ -1,41 +1,18 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
-import book1 from "../assets/img/book1.jpg"
+import book4 from "../assets/img/book1.jpg"
 import book2 from "../assets/img/book2.jpg"
 import book3 from "../assets/img/book3.jpg"
-import book4 from "../assets/img/book4.png"
-// const express= require('express');
-// const PayOS= require('@payos/node');
-
-// const payos= new PayOS('17c3fe41-aa4e-46fe-bff1-6b2ac2747c17','3d5f0b78-c0d7-4878-97bd-4ae195997edf','2f07a4a58e91bf2c76ba48b4c1f9b996a9370dc7496b717a9814573b4f718ba0')
-// const app=express();
-// app.use(express.static('public'));
-// app.use(express.json());
-
-// const your_domain='http://localhost:3000';
-// app.post('/create-payment-link',async(req,res)=>{
-//   const order={
-//     amount:10000,
-//     description: "",
-//     orderCode:10,
-//     returnUrl:``,
-//     cancelUrl:``
-//   }
-//   const paymentLink= await payos.creattePaymentLink(order);
-//   res.redirect(303,paymentLink.checkoutUrl);
-
-// })
-// app.listen(3000,()=>console.log('running on port 3000'));
-
-
-
-
-
+import book1 from "../assets/img/book4.png"
+import ebook from "../assets/ebook.pdf"
+import { useLocation } from 'react-router-dom';
+import Header from "../assets/component/Header"
+import Footer from "../assets/component/Footer"
 
 const product = {
-  name: 'Ebook Bí mật của may mắn',
-  price: '10.000 đ',
+  name: 'Bí mật của may mắn',
+  price: '2.000 đ',
   href: '#',
   breadcrumbs: [
     { id: 1, name: 'Men', href: '#' },
@@ -118,12 +95,13 @@ function classNames(...classes) {
 }
 
 export default function Ebook() {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+  
 
   return (
     <div className="bg-white">
-      <div className="pt-6">
+      
+      <Header></Header>
+      <div className="pt-10">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             
@@ -170,7 +148,7 @@ export default function Ebook() {
         {/* Product info */}
         <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl  text-bluevio font-bold tracking-tight  sm:text-3xl">{product.name}</h1>
+            <h1 className="text-2xl text-bluevio font-medium tracking-tight  sm:text-4xl">{product.name}</h1>
           </div>
 
           {/* Options */}
@@ -206,13 +184,20 @@ export default function Ebook() {
               <div className='text-lg font-bold'>
                 Hướng dẫn mua sách
               </div>
-              <div></div>
+              <div className='text-sm p-1 text-gray-500'>1. Nhấn nút "Mua ngay"</div>
+              <div className='text-sm  p-1 text-gray-500'>2. Chuyển đến trang chứa mã QR để thanh toán</div>
+              <div className='text-sm text-gray-500  p-1'> 3. Dùng tài khoản ngân hàng, ví điện tử để quét mã và thực hiện thanh toán</div>
+              <div className='text-sm  text-gray-500 p-1'>4. Sau khi thanh toán thành công, tiến trình download sẽ bắt đầu, nhấn "Continue" để tiếp tục tiến trình download</div>
+              <div className='text-sm  text-gray-500 p-1'>5. File ebook sẽ tự động download về máy của bạn</div>
+              <form action="http://localhost:3030/create-payment-link" method="post">
+
               <button
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-bluevio px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Mua ngay
               </button>
+              </form>
             </form>
           </div>
 
@@ -241,7 +226,7 @@ export default function Ebook() {
             </div>
 
             <div className="mt-10">
-            <h3 className="text-sm font-medium text-gray-900">Thông tin</h3>
+            <h3 className="text-sm font-medium text-gray-900">Mục lục</h3>
 
             <div className="mt-4">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
@@ -256,6 +241,7 @@ export default function Ebook() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   )
 }
