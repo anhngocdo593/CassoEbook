@@ -19,7 +19,7 @@ app.post('/create-payment-link', async (req, res) => {
     const YOUR_DOMAIN = 'https://cassoebook-anhngoc.netlify.app/';
     const body = {
         orderCode: Number(String(Date.now()).slice(-6)),
-        amount: 2000,
+        amount: 10000,
         description: 'Ebook',
         returnUrl: `${YOUR_DOMAIN}/finish`,
         cancelUrl: `${YOUR_DOMAIN}`
