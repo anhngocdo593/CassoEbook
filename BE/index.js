@@ -16,7 +16,7 @@ app.use('/payment', require('./controllers/payment-controller'));
 app.use('/order', require('./controllers/order-controller'));
 
 app.post('/create-payment-link', async (req, res) => {
-    const YOUR_DOMAIN = 'https://lambent-sherbet-0aff97.netlify.app/';
+    const YOUR_DOMAIN = 'https://cassoebook-anhngoc.netlify.app/';
     const body = {
         orderCode: Number(String(Date.now()).slice(-6)),
         amount: 2000,

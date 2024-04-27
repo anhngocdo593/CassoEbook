@@ -100,7 +100,7 @@ export default function Ebook() {
       <Header></Header>
       <div className="pt-10">
         <nav aria-label="Breadcrumb">
-          <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <ol  className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             
             <li className="text-sm">
               <a href={product.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
@@ -186,7 +186,7 @@ export default function Ebook() {
               <div className='text-sm text-gray-500  p-1'> 3. Dùng tài khoản ngân hàng, ví điện tử để quét mã và thực hiện thanh toán</div>
               <div className='text-sm  text-gray-500 p-1'>4. Sau khi thanh toán thành công, tiến trình download sẽ bắt đầu, nhấn "Continue" để tiếp tục tiến trình download</div>
               <div className='text-sm  text-gray-500 p-1'>5. File ebook sẽ tự động download về máy của bạn</div>
-              <form action="http://localhost:3030/create-payment-link" method="post">
+              <form action="https://cassoebook.onrender.com/create-payment-link" method="post">
 
               <button
                 type="submit"
@@ -199,7 +199,6 @@ export default function Ebook() {
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-            {/* Description and details */}
             <div>
               <h3 className="sr-only">Description</h3>
 
@@ -212,7 +211,7 @@ export default function Ebook() {
               <h3 className="text-sm font-medium text-gray-900">Thông tin</h3>
 
               <div className="mt-4">
-                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                <ul className="list-disc space-y-2 pl-4 text-sm">
                   {product.highlights.map((highlight) => (
                     <li key={highlight} className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
@@ -226,7 +225,7 @@ export default function Ebook() {
             <h3 className="text-sm font-medium text-gray-900">Mục lục</h3>
 
             <div className="mt-4">
-              <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+              <ul  className="list-disc space-y-2 pl-4 text-sm">
                 {product.details.map((detail) => (
                   <li key={detail} className="text-gray-400">
                     <span className="text-gray-600">{detail}</span>
