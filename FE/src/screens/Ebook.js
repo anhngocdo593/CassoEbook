@@ -9,7 +9,7 @@ import Footer from "../assets/component/Footer"
 
 const product = {
   name: 'Bí mật của may mắn',
-  price: '2.000 đ',
+  price: '10.000 đ',
   href: '#',
   breadcrumbs: [
     { id: 1, name: 'Men', href: '#' },
