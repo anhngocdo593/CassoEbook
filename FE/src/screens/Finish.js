@@ -1,8 +1,5 @@
 import Header from "../assets/component/Header"
 import ebook from "../assets/ebook.pdf"
-import { Link } from 'react-router-dom';
-import { useState,useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
 
 
 export default function Finish() {

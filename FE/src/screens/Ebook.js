@@ -1,12 +1,9 @@
-import { useState,useEffect } from 'react'
+
 import { StarIcon } from '@heroicons/react/20/solid'
-import { RadioGroup } from '@headlessui/react'
 import book4 from "../assets/img/book1.jpg"
 import book2 from "../assets/img/book2.jpg"
 import book3 from "../assets/img/book3.jpg"
 import book1 from "../assets/img/book4.png"
-import ebook from "../assets/ebook.pdf"
-import { useLocation } from 'react-router-dom';
 import Header from "../assets/component/Header"
 import Footer from "../assets/component/Footer"
 
