@@ -34,6 +34,19 @@ app.post('/create-payment-link', async (req, res) => {
         res.send('Something went error');
     }
 });
+app.get('/download', (req, res) => {
+    const orderCode = req.query.orderCode;
+    const authCode = req.query.authCode; // Mã xác thực từ người dùng
+
+    if (orderStatus[orderCode] && orderStatus[orderCode].success && authCode === "YOUR_AUTH_CODE") {
+        // Kiểm tra xem đơn hàng tồn tại, đã thanh toán thành công và mã xác thực đúng
+        // Phát hành ebook tại đây
+        res.send('Here is your ebook!');
+    } else {
+        res.send('Unauthorized or invalid request.');
+    }
+});
+
 
 app.listen(PORT, function () {
     console.log(`Server is listening on port ${PORT}`);
