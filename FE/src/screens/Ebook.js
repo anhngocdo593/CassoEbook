@@ -8,7 +8,7 @@ import Header from "../assets/component/Header"
 import Footer from "../assets/component/Footer"
 // import { usePayOS } from "payos-checkout";
 // import ebook from "../assets/ebook.pdf";
-import React, { useState } from 'react';
+import React, { useState,useRef} from 'react';
 
 const product = {
   name: 'Bí mật của may mắn',
@@ -97,21 +97,26 @@ function classNames(...classes) {
 export default function Ebook() {
   const [discountCode, setDiscountCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [paymentLink, setPaymentLink] = useState('https://cassoebook.onrender.com/create-payment-link1');
-
+  const [paymentLink, setPaymentLink] = useState('https://cassoebook.onrender.com/create-payment-link-a');
+  const formRef = useRef(null);
   const handlePurchase = async (e) => {
     e.preventDefault();
     try {
       if (discountCode === 'ANHCUTE') {
-        setPaymentLink('https://cassoebook.onrender.com/create-payment-link2');
+        setPaymentLink('https://cassoebook.onrender.com/create-payment-link-b');
+        
       } else if (discountCode) {
         setErrorMessage('Mã giảm giá không đúng. Vui lòng nhập lại.');
       }
+      setTimeout(() => {
+        formRef.current.submit();
+      }, 200);
       
     } catch (error) {
       console.error('Lỗi khi gửi yêu cầu:', error);
     }
   };
+  
   return (
     <div className="bg-white">
       
@@ -204,6 +209,7 @@ export default function Ebook() {
               <div className='text-sm text-gray-500  p-1'> 3. Mở App Ngân hàng bất kỳ để quét mã VietQR hoặc chuyển khoản chính xác số tiền bên dưới</div>
               <div className='text-sm  text-gray-500 p-1'>4. Sau khi thanh toán thành công, tiến trình download sẽ bắt đầu, nhấn "Continue" để tiếp tục tiến trình download</div>
               <div className='text-sm  text-gray-500 p-1'>5. File ebook sẽ tự động download về máy của bạn</div>
+              <div className='text-sm  text-blue-500 font-bold p-1'>Từ ngày 24/04/2024 đến hết ngày 25/05/2024. Khi nhập mã ANHCUTE bạn sẽ được ưu đãi mua ebook <span className="text-red-500"> chỉ với giá 2000đ</span></div>
               <div className="mt-6">
             <label htmlFor="discountCode" className="block text-sm font-medium text-gray-700">Mã giảm giá</label>
             <input
@@ -218,8 +224,13 @@ export default function Ebook() {
               <p className="mt-2 text-sm text-red-600">{errorMessage}</p>
             )}
           </div>
+              <form action={paymentLink} method="post" ref={formRef} style={{ display: 'none' }}>
+                {/* Các trường input và các phần khác của form */}
+                <input type="hidden" name="field1" value="value1" /> {/* Ví dụ: Thêm các trường ẩn nếu cần */}
+              </form>
               <form action={paymentLink} method="post">
               <button
+                onClick={handlePurchase}
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-bluevio px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
