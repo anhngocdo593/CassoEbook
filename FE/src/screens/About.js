@@ -21,7 +21,7 @@ export default function About() {
                       <a href="/">Do Ngoc Anh</a>
                   </h3>
                   <span class="text-gray-500 ">Web Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 ">Tôi không chỉ tạo ra các trang web, mà tôi còn tạo ra các trải nghiệm trọn vẹn, từ giao diện người dùng tới hậu cần mạnh mẽ đằng sau.</p>
+                  <p class="mt-3 mb-4 font-light text-gray-500 ">Tôi không chỉ tạo ra các trang web, mà tôi còn tạo ra các trải nghiệm trọn vẹn. </p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://web.facebook.com/profile.php?id=100034812375795" class="text-gray-500 hover:text-gray-900 e">

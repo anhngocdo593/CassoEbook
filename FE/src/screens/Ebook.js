@@ -6,6 +6,9 @@ import book3 from "../assets/img/book3.jpg"
 import book1 from "../assets/img/book4.png"
 import Header from "../assets/component/Header"
 import Footer from "../assets/component/Footer"
+// import { usePayOS } from "payos-checkout";
+// import ebook from "../assets/ebook.pdf";
+import React, { useState } from 'react';
 
 const product = {
   name: 'Bí mật của may mắn',
@@ -92,8 +95,23 @@ function classNames(...classes) {
 }
 
 export default function Ebook() {
-  
+  const [discountCode, setDiscountCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [paymentLink, setPaymentLink] = useState('https://cassoebook.onrender.com/create-payment-link1');
 
+  const handlePurchase = async (e) => {
+    e.preventDefault();
+    try {
+      if (discountCode === 'ANHCUTE') {
+        setPaymentLink('https://cassoebook.onrender.com/create-payment-link2');
+      } else if (discountCode) {
+        setErrorMessage('Mã giảm giá không đúng. Vui lòng nhập lại.');
+      }
+      
+    } catch (error) {
+      console.error('Lỗi khi gửi yêu cầu:', error);
+    }
+  };
   return (
     <div className="bg-white">
       
@@ -183,11 +201,24 @@ export default function Ebook() {
               </div>
               <div className='text-sm p-1 text-gray-500'>1. Nhấn nút "Mua ngay"</div>
               <div className='text-sm  p-1 text-gray-500'>2. Chuyển đến trang chứa mã QR để thanh toán</div>
-              <div className='text-sm text-gray-500  p-1'> 3. Dùng tài khoản ngân hàng, ví điện tử để quét mã và thực hiện thanh toán</div>
+              <div className='text-sm text-gray-500  p-1'> 3. Mở App Ngân hàng bất kỳ để quét mã VietQR hoặc chuyển khoản chính xác số tiền bên dưới</div>
               <div className='text-sm  text-gray-500 p-1'>4. Sau khi thanh toán thành công, tiến trình download sẽ bắt đầu, nhấn "Continue" để tiếp tục tiến trình download</div>
               <div className='text-sm  text-gray-500 p-1'>5. File ebook sẽ tự động download về máy của bạn</div>
-              <form action="https://cassoebook.onrender.com/create-payment-link" method="post">
-
+              <div className="mt-6">
+            <label htmlFor="discountCode" className="block text-sm font-medium text-gray-700">Mã giảm giá</label>
+            <input
+              type="text"
+              name="discountCode"
+              id="discountCode"
+              className="mt-1 block p-2 w-full border border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              value={discountCode}
+              onChange={(e) => setDiscountCode(e.target.value)}
+            />
+            {errorMessage && (
+              <p className="mt-2 text-sm text-red-600">{errorMessage}</p>
+            )}
+          </div>
+              <form action={paymentLink} method="post">
               <button
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-bluevio px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

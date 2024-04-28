@@ -15,11 +15,30 @@ app.use('/', express.static('public'));
 app.use('/payment', require('./controllers/payment-controller'));
 app.use('/order', require('./controllers/order-controller'));
 
-app.post('/create-payment-link', async (req, res) => {
+app.post('/create-payment-link-a', async (req, res) => {
     const YOUR_DOMAIN = 'https://cassoebook-anhngoc.netlify.app';
     const body = {
         orderCode: Number(String(Date.now()).slice(-6)),
         amount: 10000,
+        description: 'Ebook',
+        returnUrl: `${YOUR_DOMAIN}/finish`,
+        cancelUrl: `${YOUR_DOMAIN}`
+    };
+
+    try {
+        const paymentLinkResponse = await payOS.createPaymentLink(body);
+        res.redirect(paymentLinkResponse.checkoutUrl);  
+        
+    } catch (error) {
+        console.error(error);
+        res.send('Something went error');
+    }
+});
+app.post('/create-payment-link-b', async (req, res) => {
+    const YOUR_DOMAIN = 'https://cassoebook-anhngoc.netlify.app';
+    const body = {
+        orderCode: Number(String(Date.now()).slice(-6)),
+        amount: 2000,
         description: 'Ebook',
         returnUrl: `${YOUR_DOMAIN}/finish`,
         cancelUrl: `${YOUR_DOMAIN}`
