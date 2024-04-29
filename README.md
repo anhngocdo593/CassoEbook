@@ -1,6 +1,6 @@
 # Hướng dẫn sử dụng dự án CASSO EBOOK
 
-Dự án này là một ứng dụng web MERN (React.js, Node.js) đơn giản, giúp bạn khám phá các tính năng cơ bản của cả front-end và back-end.
+Dự án này là một ứng dụng web MERN (React.js, Node.js) đơn giản.
 ## DEVELOPER
 Đỗ Ngọc Ánh
 ## Cài đặt
@@ -18,7 +18,7 @@ Dự án này là một ứng dụng web MERN (React.js, Node.js) đơn giản, 
 ## Hướng dẫn sử dụng
 
 - Front-end sẽ chạy trên `http://localhost:3000`.
-- Back-end sẽ chạy trên `http://localhost:3030`( Chỉnh sửa action paymentLink ở Ebook.js ở FE/src/screens thành /creat-payment-link1 và create-payment-link2)
+- Back-end sẽ chạy trên `http://localhost:3030`( Chỉnh sửa action paymentLink ở Ebook.js ở FE/src/screens thành /creat-payment-link1 và /create-payment-link2)
 
 
 

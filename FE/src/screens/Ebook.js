@@ -6,18 +6,13 @@ import book3 from "../assets/img/book3.jpg"
 import book1 from "../assets/img/book4.png"
 import Header from "../assets/component/Header"
 import Footer from "../assets/component/Footer"
-// import { usePayOS } from "payos-checkout";
-// import ebook from "../assets/ebook.pdf";
 import React, { useState,useRef} from 'react';
 
 const product = {
   name: 'Bí mật của may mắn',
   price: '10.000 đ',
   href: '#',
-  breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
+
   images: [
     {
       src: book1,
@@ -35,21 +30,6 @@ const product = {
       src: book4,
       alt: 'Trích dẫn 3',
     },
-  ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
-  sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
   ],
   description:
   'Bí Mật Của May Mắn đã tạo nên một làn sóng tư duy mới trong việc tìm kiếm may mắn, hạnh phúc và thành công trong cuộc sống. Họ đã nhận hàng trăm ngàn thư của độc giả trên khắp thế giới gửi về hoan nghênh và cảm ơn ý tưởng độc đáo từ cuốn sách nhỏ này. Phải nói là Good Luck là cuốn sách độc đáo, sẽ còn được nhắc đến và lan truyền đi khắp thế giới. Cuốn sách không chỉ giúp ích cho cuộc sống con người mà rất nhiều công ty trên thế giới đã ứng dụng những ý tưởng của Good Luck để đạt được thành công trong công việc. Nghiên cứu cuộc sống dưới góc nhìn của tâm lý học Alex Rovira và Fernando Trías de Bes đã phát hiện được “dấu chân của thân may mắn" mà ai cũng có thể tìm gặp. Cuốn sách của hai ông Good Luck - Bí mật của may mắn là tập hợp những câu chuyện là thường hướng đến một bài học vô cùng giá trị về cuộc sống. Sự may mắn không xuất hiện ngẫu nhiên trong hành trình cuộc sống chúng ta; chính chúng ta phải tìm và tạo ra những điều kiện để may mắn tìm đến với mình. Good luck - Bí Mật Của May Mắn là câu chuyện chưa bao giờ là cũ và trở thành một cuốn sách liên tục phá vỡ nhiều kỷ lục trong lịch sử xuất bản thế giới. Trước khi Good Luck - Bí mật của may mắn đến với Việt Nam thì cuốn sách đã có mặt tại 68 quốc gia trên thế giới (với 35 ngôn ngữ) chỉ trong vòng một năm.'
