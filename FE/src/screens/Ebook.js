@@ -184,7 +184,7 @@ export default function Ebook() {
               <div className='text-lg font-bold'>
                 Hướng dẫn mua sách
               </div>
-              <div className='text-sm p-1 text-gray-500'>1. Nhấn nút "Mua ngay"</div>
+              <div className='text-sm p-1 text-gray-500'>1. Nhấn nút "Mua ngay" (Nếu trang web load chậm, vui lòng đợi)</div>
               <div className='text-sm  p-1 text-gray-500'>2. Chuyển đến trang chứa mã QR để thanh toán</div>
               <div className='text-sm text-gray-500  p-1'> 3. Mở App Ngân hàng bất kỳ để quét mã VietQR hoặc chuyển khoản chính xác số tiền bên dưới</div>
               <div className='text-sm  text-gray-500 p-1'>4. Sau khi thanh toán thành công, tiến trình download sẽ bắt đầu, nhấn "Continue" để tiếp tục tiến trình download</div>
